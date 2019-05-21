@@ -1,0 +1,20 @@
+<div class="ion-backdrop" (click)="dismiss()">
+</div>
+  <div class="bottom-view-container" text-center padding>
+    <h1 text-center>Coach</h1>
+    <h4 text-center>R 300 p/h</h4>
+    <hr>
+    <div class="activity-list">
+      <ion-select placeholder="Select Activity" [(ngModel)]="activity">
+        <ion-option *ngFor="let a of activities" [value]="a.value">{{a.name}}</ion-option>
+      </ion-select>
+    </div>
+    <div text-center>
+      <button ion-button round color="primary" (click)="nextProfile()">
+        CONTINUE
+      </button>
+      <button ion-button round color="danger" (click)="dismiss()">
+        CANCEL
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,75 @@
+<ion-header no-border>
+  <ion-navbar color="white" >
+    <button block ion-button small color="primary" clear>Terms & Conditions</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-slides [pager]="true" spaceBetween="0">
+    <ion-slide>
+      <h1>Welcome</h1>
+      <p size="small">Lorem ipsum dummy text</p>
+      <br>
+      <br>
+      <br>
+      <button ion-button color="light" round (click)="next('login')">Welcome back</button>
+    </ion-slide>
+    <ion-slide style="overflow-y: auto;">
+      <h1>Register</h1>
+      <form id=formId (ngSubmit)="submitMethod()" #refForm="ngForm">
+        <div padding>
+          <ion-item>
+            <ion-label no-padding stacked>Name</ion-label>
+            <ion-input type="email" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label no-padding stacked>Surname</ion-label>
+            <ion-input type="email" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label no-padding stacked>Email</ion-label>
+            <ion-input type="email" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label no-padding stacked>Password</ion-label>
+            <ion-input type="password" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label no-padding stacked>Confirm Password</ion-label>
+            <ion-input type="password" ></ion-input>
+          </ion-item>
+          <br>
+          <br>
+          <button color="primary" round ion-button (click)="goToTabs()">Register</button>
+        </div>
+      </form>
+    </ion-slide>
+    <ion-slide padding>
+      <h1>Login</h1>
+      <form id=formId (ngSubmit)="submitMethod()" #refForm="ngForm">
+        <div padding>
+          <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="email" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password" ></ion-input>
+          </ion-item>
+          <br>
+          <br>
+          <button color="primary" round ion-button (click)="goToTabs()">Login</button>
+          <br>
+          <br>
+          <button color="primary" clear small round ion-button>Forgot your password?</button>
+        </div>
+      </form>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar color="white">
+    <button (click)="next('register')" block ion-button small color="primary" clear>Need an account? Register here...</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button large icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <button ion-button clear color="primary" text-left>
+      <ion-icon name="pin" item-start></ion-icon>
+      Current Location
+  </button>
+  <h6 padding>RECENT LOCATIONS</h6>
+  <button ion-button clear color="primary" text-left>
+      <ion-icon name="pin" item-start></ion-icon>
+      5 Bauhinia Crescent, Eco Park
+  </button>
+  <hr>
+  <h6 padding>BOOKING TIME</h6>
+  <ion-list radio-group [(ngModel)]="formDate">
+    <ion-item>
+        <ion-label>As soon as possible</ion-label>
+        <ion-radio checked="true" value="asap"></ion-radio>
+    </ion-item>
+    <ion-item>
+        <ion-label>Book a future date</ion-label>
+        <ion-radio checked="false" value="date"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar color="primary">
+    <button ion-button color="primary" text-left full (click)="saveAddress()">
+      Save 
+    </button>
+  </ion-toolbar>
+</ion-footer>

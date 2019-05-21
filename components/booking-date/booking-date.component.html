@@ -1,0 +1,17 @@
+<div class="ion-backdrop" (click)="dismiss()">
+</div>
+<div class="bottom-view-container" text-center padding>
+  <h1>Booking</h1>
+  <h3>Select your booking date.</h3>
+  <p>Start by selecting the date below and click save to request your coach.</p>
+  <ion-datetime placeholder="Select Date" displayFormat="MMM DD, YYYY HH:mm"  [(ngModel)]="myDate"></ion-datetime>
+  <hr>
+  <div text-center>
+    <button ion-button round color="primary" (click)="setDate()">
+      SAVE DATE
+    </button>
+    <button ion-button round color="danger" (click)="dismiss()">
+      CANCEL
+    </button>
+  </div>
+</div>
