@@ -15,6 +15,8 @@ export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  activityString: string;
+  activityRate: number;
 
   constructor(
     public navCtrl: NavController,
@@ -60,8 +62,13 @@ export class HomePage {
     });
     modal.present();
   }
-  presentActivity() {
-    const modal = this.modalCtrl.create(BookingActivityComponent);
+  presentActivity(target, rate) {
+    this.activityString = target;
+    this.activityRate = rate;
+    const modal = this.modalCtrl.create(BookingActivityComponent, {
+      rate: this.activityRate,
+      activity: this.activityString
+    });
     modal.onDidDismiss(data => {
      console.log(data);
     });

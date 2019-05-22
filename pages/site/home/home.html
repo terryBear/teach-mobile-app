@@ -16,17 +16,20 @@
 <ion-footer no-border>
   <ion-toolbar>
     <div text-center style="display: flex; justify-content: space-evenly; align-items: center; padding: 10px;">
-      <div style=" display: block;" (click)="presentActivity()">
+      <div style=" display: block;" (click)="presentActivity('coach', 250)">
         <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round src="https://thispersondoesnotexist.com/image">
         <button color="primary" block clear small round ion-button>Coach</button>
+        <p class="small" style="font-size: 12px; margin: 0;">R 250 p/h</p>
       </div>
-      <div style=" display: block;" (click)="presentActivity()">
+      <div style=" display: block;" (click)="presentActivity('tutor', 100)">
         <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round src="https://thispersondoesnotexist.com/image">
         <button color="primary" block clear small round ion-button>Tutor</button>
+        <p class="small" style="font-size: 12px; margin: 0;">R 100 p/h</p>
       </div>
-      <div style=" display: block;" (click)="presentActivity()">
+      <div style=" display: block;" (click)="presentActivity('aupair', 100)">
         <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round src="https://thispersondoesnotexist.com/image">
         <button color="primary" block clear small round ion-button>Aupair</button>
+        <p class="small" style="font-size: 12px; margin: 0;">R 100 p/h</p>
       </div>
     </div>
   </ion-toolbar>
