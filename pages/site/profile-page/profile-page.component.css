@@ -1,0 +1,27 @@
+.profile-content ion-buttons button {
+  background-color: #EEF2F3;
+  color: #B418D1;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+}
+.profile-content {
+  padding: 10px;
+}
+.profile-content ion-buttons button.active {
+  background-color: #B418D1;
+  color: #fff;
+}
+.main-slider-content, ion-slides, ion-slide {
+  padding: 0;
+}
+.profile-card-list {
+  margin: 0 0 0px;
+  width: 100%;
+  height: 200px;
+}
+ion-card-content {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

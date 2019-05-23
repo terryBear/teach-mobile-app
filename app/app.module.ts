@@ -16,6 +16,8 @@ import { BookingActivityComponent } from '../components/booking-activity/booking
 import { BookingDateComponent } from '../components/booking-date/booking-date.component';
 import { ProfilesListComponent } from '../pages/site/profiles-list/profiles-list.component';
 import { ProfilesFilterComponent } from '../pages/site/profiles-filter/profiles-filter.component';
+import { ProfilePageComponent } from '../pages/site/profile-page/profile-page.component';
+import { ProfileReviewsComponent } from '../pages/site/profile-reviews/profile-reviews.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProfilesFilterComponent } from '../pages/site/profiles-filter/profiles-
     BookingActivityComponent,
     BookingDateComponent,
     ProfilesListComponent,
-    ProfilesFilterComponent
+    ProfilesFilterComponent,
+    ProfilePageComponent,
+    ProfileReviewsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { ProfilesFilterComponent } from '../pages/site/profiles-filter/profiles-
     BookingActivityComponent,
     BookingDateComponent,
     ProfilesListComponent,
-    ProfilesFilterComponent
+    ProfilesFilterComponent,
+    ProfilePageComponent,
+    ProfileReviewsComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}

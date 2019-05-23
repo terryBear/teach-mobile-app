@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
-import { TabsPage } from '../../site/tabs/tabs';
+import { HomePage } from '../../site/home/home';
 
 @Component({
   selector: 'page-landing',
@@ -30,7 +30,7 @@ export class LandingPage {
   }
 
   goToTabs() {
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

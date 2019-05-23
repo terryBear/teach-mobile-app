@@ -5,10 +5,12 @@
     <h4 text-center>R {{rate}} p/h</h4>
     <hr>
     <div class="activity-list">
-      <ion-label>select {{name}}</ion-label>
-      <ion-select [selectOptions]="selectOptions" placeholder="Select Activity" [(ngModel)]="activity">
-        <ion-option *ngFor="let a of activities" [value]="a.value">{{a.name}}</ion-option>
-      </ion-select>
+      <ion-item>
+        <ion-label>Select {{name}}</ion-label>
+        <ion-select [selectOptions]="selectOptions" placeholder="Select Activity" [(ngModel)]="activity">
+          <ion-option *ngFor="let a of activities" [value]="a.value">{{a.name}}</ion-option>
+        </ion-select>
+      </ion-item>
     </div>
     <div text-center>
       <button ion-button round color="primary" (click)="nextProfile()">

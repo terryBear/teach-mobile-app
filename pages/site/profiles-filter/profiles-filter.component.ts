@@ -9,6 +9,14 @@ import { NavController, IonicPage, ModalController, ToastController, ActionSheet
 })
 export class ProfilesFilterComponent implements OnInit {
 
+  filter = {
+    type: 'coach',
+    distance: 10,
+    qualification: 3,
+    rating: 3,
+    gender: 0
+  }
+
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -21,7 +29,11 @@ export class ProfilesFilterComponent implements OnInit {
   }
 
   saveFilters() {
-    this.viewCtrl.dismiss();
+    this.navCtrl.pop();
+  }
+
+  setType(type) {
+    this.filter.type = type;
   }
 
 }

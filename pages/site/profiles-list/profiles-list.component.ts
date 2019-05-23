@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController, IonicPage, ModalController, ToastController, ActionSheetController, Slides } from 'ionic-angular';
 import { ProfilesFilterComponent } from '../profiles-filter/profiles-filter.component';
+import { ProfilePageComponent } from '../profile-page/profile-page.component';
 
 @IonicPage()
 @Component({
@@ -39,5 +40,9 @@ export class ProfilesListComponent implements OnInit {
 
   slideNext() {
    this.slides.slideNext();
+  }
+
+  viewProfile() {
+    this.navCtrl.push(ProfilePageComponent)
   }
 }

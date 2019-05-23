@@ -1,22 +1,84 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Select A Coach</ion-title>
-    <ion-buttons end>
-      <button ion-button clear icon-only (click)="showFilters()">
-        <ion-icon name="funnel"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Filters</ion-title>
+        <ion-buttons end>
+            <button ion-button clear icon-only (click)="saveFilters()">
+                <ion-icon name="checkmark"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 <ion-content>
-  <p>
-  profiles-list works!
-  </p>
+    <h4>Select Type</h4>
+    <ion-toolbar>
+        <div text-center style="display: flex; justify-content: space-evenly; align-items: start; padding: 10px;">
+            <div style=" display: block;" (click)="setType('coach')">
+                <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round
+                    src="https://thispersondoesnotexist.com/image" [ngClass]="{ 'active' : filter.type === 'coach' }">
+                <button color="primary" block clear small round ion-button class="filter-text"
+                    [ngClass]="{ 'active-text' : filter.type === 'coach' }">Coach</button>
+            </div>
+            <div style=" display: block;" (click)="setType('tutor')">
+                <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round
+                    src="https://thispersondoesnotexist.com/image" [ngClass]="{ 'active' : filter.type === 'tutor' }">
+                <button color="primary" block clear small round ion-button class="filter-text"
+                    [ngClass]="{ 'active-text' : filter.type === 'tutor' }">Tutor</button>
+            </div>
+            <div style=" display: block;" (click)="setType('aupair')">
+                <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round
+                    src="https://thispersondoesnotexist.com/image" [ngClass]="{ 'active' : filter.type === 'aupair' }">
+                <button color="primary" block clear small round ion-button class="filter-text"
+                    [ngClass]="{ 'active-text' : filter.type === 'aupair' }">Aupair</button>
+            </div>
+        </div>
+    </ion-toolbar>
+    <ion-list>
+        <h4>
+            select distance
+            <ion-badge item-end color="light">{{filter.distance}} km</ion-badge>
+        </h4>
+        <ion-item>
+            <ion-range color="light" min="0" max="100" step="1" [(ngModel)]="filter.distance">
+                <ion-icon small range-left name="car"></ion-icon>
+                <ion-icon range-right name="car"></ion-icon>
+            </ion-range>
+        </ion-item>
+        <h4>
+            select Qualification
+            <ion-badge item-end color="light">{{ ( filter.qualification === 0 ? 'Matric' : ( filter.qualification === 1 ? 'Certificate' : (filter.qualification === 2 ? 'Diploma': ( filter.qualification === 3 ? 'Bachelors' : ( filter.qualification === 4 ? 'Masters' : (filter.qualification === 5 ? 'Doctoral':  null)))))) }}</ion-badge>
+        </h4>
+        <ion-item>
+            <ion-range color="light" min="0" max="5" step="1" [(ngModel)]="filter.qualification">
+                <ion-icon small range-left name="school"></ion-icon>
+                <ion-icon range-right name="school"></ion-icon>
+            </ion-range>
+        </ion-item>
+        <h4>
+            select Rating
+            <ion-badge item-end color="light">{{filter.rating}}</ion-badge>
+        </h4>
+        <ion-item>
+            <ion-range color="light" min="0" max="5" step="1" [(ngModel)]="filter.rating">
+                <ion-icon small range-left name="star"></ion-icon>
+                <ion-icon range-right name="star"></ion-icon>
+            </ion-range>
+        </ion-item>
+        <h4>
+            select Gender
+            <ion-badge item-end color="light">{{filter.gender === 1 ? 'Male' : 'Female'}}</ion-badge>
+        </h4>
+        <ion-item>
+            <ion-range color="light" min="0" max="1" step="1" [(ngModel)]="filter.gender">
+                <ion-icon range-left name="woman"></ion-icon>
+                <ion-icon range-right name="man"></ion-icon>
+            </ion-range>
+        </ion-item>
+    </ion-list>
 </ion-content>
 <ion-footer no-border>
-  <ion-toolbar color="primary">
-    <button ion-button color="primary" text-left full (click)="saveFilters()">
-      Save 
-    </button>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <button ion-button color="primary" text-left full (click)="saveFilters()">
+            Apply Filters
+        </button>
+    </ion-toolbar>
 </ion-footer>

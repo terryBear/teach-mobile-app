@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Jonathan Stones</ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-only (click)="showFilters()">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <div class="main-slider-content">
+    <ion-slides spaceBetween="0" [loop]="true" (ionSlideDidChange)="slideChanged()">
+      <ion-slide>
+        <ion-card class="profile-card-list" (click)="viewProfile()">
+          <ion-card-content style="background-image: url('https://thispersondoesnotexist.com/image'); height: 100%;">
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="profile-card-list" (click)="viewProfile()">
+          <ion-card-content style="background-image: url('https://thispersondoesnotexist.com/image'); height: 100%;">
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="profile-card-list" (click)="viewProfile()">
+          <ion-card-content style="background-image: url('https://thispersondoesnotexist.com/image'); height: 100%;">
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="profile-card-list" (click)="viewProfile()">
+          <ion-card-content style="background-image: url('https://thispersondoesnotexist.com/image'); height: 100%;">
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="profile-content">
+    <ion-buttons start>
+        <button ion-button round color="primary" (click)="active = 'Profile'" [ngClass]="{ 'active': active === 'Profile', 'inactive': active !== 'Profile' }">
+            Profile
+        </button>
+        <button ion-button round color="primary" (click)="active = 'Experience'" [ngClass]="{ 'active': active === 'Experience', 'inactive': active !== 'Experience' }">
+            Experience
+        </button>
+        <button ion-button round color="primary" (click)="active = 'Qualifications'" [ngClass]="{ 'active': active === 'Qualifications', 'inactive': active !== 'Qualifications' }">
+            Qualifications
+        </button>
+        <button ion-button round color="primary" (click)="showReviews()" [ngClass]="{ 'active': active === 'Reviews', 'inactive': active !== 'Reviews' }">
+            Reviews
+        </button>
+    </ion-buttons>
+    <ng-container *ngIf="active === 'Profile'">
+        <h1>Jonathan Stones</h1>
+        <p>Rugby Coach - Hennopspark Primary Gr: 3</p>
+        <ion-item no-border no-padding (click)="showReviews()">
+            <ion-avatar item-left>
+                    <img style="width: 50px; height: 50px; border-radius: 80px; margin: 0 auto; position: relative;" round src="https://thispersondoesnotexist.com/image">
+            </ion-avatar>
+            <div class="rating-container">
+              <ion-icon name="star" color="secondary"></ion-icon>
+              <ion-icon name="star" color="secondary"></ion-icon>
+              <ion-icon name="star" color="secondary"></ion-icon>
+              <ion-icon name="star" color="light"></ion-icon>
+              <ion-icon name="star" color="light"></ion-icon>
+            </div>
+            <div class="review-text">
+              <p>12 Reviews</p>
+            </div>
+        </ion-item>
+        <p>Languages:
+            <span>English, Afrikaans, Spanish</span>
+        </p>
+        <p>Age:
+            <span>23</span>
+        </p>
+        <p>Gender:
+            <span>Male</span>
+        </p>
+        <p>Employment Type:
+            <span>Full Time</span>
+        </p>
+        <p>Employer:
+            <span>Hennopspark Primary</span>
+        </p>
+    </ng-container>
+  </div>
+</ion-content>
+<ion-footer no-border color="white">
+  <ion-toolbar color="primary">
+    <button ion-button full color="primary" (click)="active = 'Profile'" [ngClass]="{ 'active': active === 'Profile', 'inactive': active !== 'Profile' }">
+        Send Request
+    </button>
+  </ion-toolbar>
+</ion-footer>
