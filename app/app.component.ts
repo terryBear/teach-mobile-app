@@ -11,7 +11,7 @@ import { ProfilesFilterComponent } from '../pages/site/profiles-filter/profiles-
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ProfilePageComponent;
+  rootPage:any = LandingPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

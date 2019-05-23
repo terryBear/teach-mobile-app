@@ -3,6 +3,7 @@ import { NavController, IonicPage, ModalController, ToastController, ActionSheet
 import { BookingOptionsComponent } from '../../../components/booking-options/booking-options.component';
 import { BookingActivityComponent } from '../../../components/booking-activity/booking-activity.component';
 import { BookingDateComponent } from '../../../components/booking-date/booking-date.component';
+import { ProfilePageComponent } from '../profile-page/profile-page.component';
 
 declare var google;
 
@@ -366,5 +367,9 @@ export class HomePage {
       ]
     });
     actionSheet.present();
+  }
+
+  goToProfile() {
+    this.navCtrl.push(ProfilePageComponent);
   }
 }
