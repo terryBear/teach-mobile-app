@@ -1,5 +1,5 @@
 .ion-backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   left: 0;
   right: 0;
@@ -26,6 +26,7 @@
   height: 80vh;
   transition: all ease-in-out 1s;
   z-index: 2;
+  box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
 }
 .activity-list {
   margin-bottom: 40px;

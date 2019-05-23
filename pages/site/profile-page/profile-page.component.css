@@ -1,3 +1,6 @@
+.profile-content ion-buttons {
+  margin-bottom: 50px;
+}
 .profile-content ion-buttons button {
   background-color: #EEF2F3;
   color: #B418D1;
@@ -24,4 +27,9 @@ ion-card-content {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+h1 {
+  font-weight: 300;
+  color: #B418D1;
+  margin-bottom: 10px;
 }
